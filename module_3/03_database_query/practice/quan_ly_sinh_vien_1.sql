@@ -1,0 +1,1 @@
+SELECT * FROM quan_ly_sinh_vien_1.mark;
