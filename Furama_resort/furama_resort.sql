@@ -293,12 +293,6 @@ on hop_dong.idDichVu = dich_vu.idDichVu
 where year(hop_dong.ngayLamHopDong) = '2019'
 group by month(hop_dong.ngayLamHopDong);
 
-select count(HD.idKhachHang)
-from hop_dong HD
-left join khach_hang KH
-on HD.idKhachHang = KH.idKhachHang
-where (year(HD.ngayLamHopDong) = 2019 and month(HD.ngayLamHopDong) = 3)
-or (year(HD.ngayLamHopDong) = 2019 and month(HD.ngayLamHopDong) = 2);
 
 -- 10.	Hiển thị thông tin tương ứng với từng Hợp đồng thì đã sử dụng bao nhiêu Dịch vụ đi kèm. 
 -- Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienDatCoc, SoLuongDichVuDiKem 
