@@ -1,1 +1,0 @@
-SELECT * FROM Furama.hop_dong_chi_tiet;
