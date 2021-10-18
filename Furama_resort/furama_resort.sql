@@ -1,99 +1,99 @@
-drop database if exists Furama;
-create database Furama;
-use Furama;
+drop database if exists furama_resort;
+create database furama_resort;
+use furama_resort;
 create table vi_tri (
-idViTri int primary key,
-tenViTri varchar(45)
+id_vi_tri int primary key,
+ten_vi_tri varchar(45)
 );
 create table trinh_do (
-idTrinhDo int primary key,
-trinhDo varchar(45)
+id_trinh_do int primary key,
+trinh_do varchar(45)
 );
 create table bo_phan (
-idBoPhan int primary key,
-tenBoPhan varchar(45)
+id_bo_phan int primary key,
+ten_bo_phan varchar(45)
 );
 create table nhan_vien (
-idNhanVien int primary key,
-hoTen varchar(45),
-idViTri int,
-idTrinhDo int,
-idBoPhan int,
-ngaySinh date,
-soCMND varchar(45),
+id_nhan_vien int primary key,
+ho_ten varchar(45),
+id_vi_tri int,
+id_trinh_do int,
+id_bo_phan int,
+ngay_sinh date,
+so_cmnd varchar(45),
 luong varchar(45),
 sdt varchar(45),
 email varchar(45),
-diaChi varchar(45),
-foreign key (idViTri) references vi_tri(idViTri),
-foreign key (idTrinhDo) references trinh_do(idTrinhDo),
-foreign key (idBoPhan) references bo_phan(idBoPhan)
+dia_chi varchar(45),
+foreign key (id_vi_tri) references vi_tri(id_vi_tri),
+foreign key (id_trinh_do) references trinh_do(id_trinh_do),
+foreign key (id_bo_phan) references bo_phan(id_bo_phan)
 );
 create table dich_vu_di_kem(
-idDichVuDiKem int primary key,
-tenDichVuDiKem varchar(45),
+id_dich_vu_di_kem int primary key,
+ten_dich_vu_di_kem varchar(45),
 gia int,
-donVi int,
-trangThaiKhaDung varchar(45)
+don_vi int,
+trang_thai_kha_dung varchar(45)
 );
 
 create table loai_khach (
-idLoaiKhach int primary key,
-tenLoaiKhach varchar (45)
+id_loai_khach int primary key,
+ten_loai_khach varchar (45)
 );
 create table khach_hang (
-idKhachHang int primary key,
-idLoaiKhach int,
-hoTen varchar (45),
-ngaySinh date,
-soCMND varchar(45),
+id_khach_hang int primary key,
+id_loai_khach int,
+ho_ten varchar (45),
+ngay_sinh date,
+so_cmnd varchar(45),
 sdt varchar(45),
 email varchar(45),
-diaChi varchar(45),
-foreign key (idLoaiKhach) references loai_khach(idLoaiKhach)
+dia_chi varchar(45),
+foreign key (id_loai_khach) references loai_khach(id_loai_khach)
 );
 create table kieu_thue (
-idKieuThue int primary key,
-tenKieuThue varchar(45),
+id_kieu_thue int primary key,
+ten_kieu_thue varchar(45),
 gia int
 );
 create table loai_dich_vu (
-idLoaiDichVu int primary key,
-tenLoaiDichVu varchar(45)
+id_loai_dich_vu int primary key,
+ten_loai_dich_vu varchar(45)
 );
 create table dich_vu (
-idDichVu int primary key,
-tenDichVu varchar(45),
-dienTich int,
-soTang int,
-soNguoiToiDa varchar(45),
-chiPhiThue varchar(45),
-idKieuThue int,
-idLoaiDichVu int,
-trangThai varchar(45),
-foreign key (idKieuThue) references kieu_thue(idKieuThue),
-foreign key (idLoaiDichVu) references loai_dich_vu(idLoaiDichVu)
+id_dich_vu int primary key,
+ten_dich_vu varchar(45),
+dien_tich int,
+so_tang int,
+so_nguoi_toi_da varchar(45),
+chi_phi_thue varchar(45),
+id_kieu_thue int,
+id_loai_dich_vu int,
+trang_thai varchar(45),
+foreign key (id_kieu_thue) references kieu_thue(id_kieu_thue),
+foreign key (id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu)
 );
 create table hop_dong (
-idHopDong int primary key,
-idNhanVien int,
-idKhachHang int,
-idDichVu int,
-ngayLamHopDong date,
-ngayKetThuc date,
-tienDatCoc int,
-tongTien int,
-foreign key (idNhanVien) references nhan_vien(idNhanVien),
-foreign key (idKhachHang) references khach_hang(idKhachHang),
-foreign key (idDichVu) references dich_vu(idDichVu)
+id_hop_dong int primary key,
+id_nhan_vien int,
+id_khach_hang int,
+id_dich_vu int,
+ngay_lam_hop_dong date,
+ngay_ket_thuc date,
+tien_dat_coc int,
+tong_tien int,
+foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien),
+foreign key (id_khach_hang) references khach_hang(id_khach_hang),
+foreign key (id_dich_vu) references dich_vu(id_dich_vu)
 );
 create table hop_dong_chi_tiet (
-idHopDongChiTiet int primary key,
-idHopDong int,
-idDichVuDiKem int,
-soLuong int,
-foreign key (idDichVuDiKem) references dich_vu_di_kem(idDichVuDiKem),
-foreign key (idHopDong) references hop_dong(idHopDong)
+id_hop_dong_chi_tiet int primary key,
+id_hop_dong int,
+id_dich_vu_di_kem int,
+so_luong int,
+foreign key (id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem),
+foreign key (id_hop_dong) references hop_dong(id_hop_dong)
 );
 
 insert into vi_tri
@@ -104,6 +104,7 @@ values
 (4, "Giám sát"),
 (5, "Quản lý"),
 (6, "Giám đốc");
+
 insert into trinh_do
 values 
 (1, "Trung cấp"),
@@ -117,6 +118,7 @@ values
 (2, "Hành Chính"),
 (3, "Phục vụ"),
 (4, "Quản lý");
+
 insert into nhan_vien
 values 
 (1,'Nguyễn An', 1, 3, 1, '1980-10-20', '0982345145', '100000', '0376597123', 'nguyenan@gmail','Đà Nẵng'),
@@ -198,154 +200,207 @@ values (1, 1, 1, 1),
 (3,5,1,2),
 (4,3,2,4),
 (5,12,2,4),
-(6,8,3,1);
+(6,8,3,1),
+(7,12,4,4),
+(8,12,5,4),
+(9,12,3,4),
+(10,12,3,4),
+(11,12,5,4);
 
 
 -- 2. Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
 select *
 from nhan_vien
-where (hoTen like "H%" or hoTen like "T%" or hoTen like "K%") and char_length(hoTen) <= 15;
+where (ho_ten like "H%" or ho_ten like "T%" or ho_ten like "K%") and char_length(ho_ten) <= 15;
 
 
 -- 3. Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 select *
 from khach_hang as AGE
-where (timestampdiff (year, ngaySinh, curdate()) > 18 and timestampdiff (year, ngaySinh, curdate()) <50) 
-and (diaChi ="Quảng Trị" or diaChi = "Đà Nẵng");
+where (timestampdiff (year, ngay_sinh, curdate()) > 18 and timestampdiff (year, ngay_sinh, curdate()) <50) 
+and (dia_chi ="Quảng Trị" or dia_chi = "Đà Nẵng");
 
 -- 4. Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
 -- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
 -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.				
-select khach_hang.hoTen as "họ tên khách hàng", khach_hang.idKhachHang as "id khách hàng", 
-loai_khach.tenLoaiKhach as "loại khách", hop_dong.idKhachHang as "id hợp đồng", count(hop_dong.idKhachHang) as "số lần đặt"
+select khach_hang.ho_ten as "họ tên khách hàng", khach_hang.id_khach_hang as "id khách hàng", 
+loai_khach.ten_loai_khach as "loại khách", hop_dong.id_khach_hang as "id hợp đồng", count(hop_dong.id_khach_hang) as "số lần đặt"
 from khach_hang 
 join hop_dong
-on khach_hang.idKhachHang = hop_dong.idKhachHang
+on khach_hang.id_khach_hang = hop_dong.id_khach_hang
 join loai_khach
-on khach_hang.idLoaiKhach = loai_khach.idLoaiKhach
-where loai_khach.tenLoaiKhach = "Diamond" 
-group by  hop_dong.idKhachHang 
-order by count(hop_dong.idKhachHang) asc;
+on khach_hang.id_loai_khach = loai_khach.id_loai_khach
+where loai_khach.ten_loai_khach = "Diamond" 
+group by  hop_dong.id_khach_hang 
+order by count(hop_dong.id_khach_hang) asc;
 
--- 5.	Hiển thị IDKhachHang, HoTen, TenLoaiKhach, IDHopDong, TenDichVu, NgayLamHopDong, NgayKetThuc, TongTien 
--- (Với TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia, với SoLuong và Giá là từ bảng DichVuDiKem) 
+-- 5.	Hiển thị id_khach_hang, ho_ten, ten_loai_khach, id_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tong_tien 
+-- (Với tong_tien được tính theo công thức như sau: chi_phi_thue + so_luong*Gia, với so_luong và Giá là từ bảng DichVuDiKem) 
 -- cho tất cả các Khách hàng đã từng đặt phỏng. (Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
-select KH.idKhachHang, KH.hoTen, HD.idHopDong, DV.tenDichVu, HD.ngayLamHopDong, HD.ngayKetThuc, 
-(DV.chiPhiThue + DVDK.gia*HDCT.soLuong) as "Tổng tiền"
+select KH.id_khach_hang, KH.ho_ten, HD.id_hop_dong, DV.ten_dich_vu, HD.ngay_lam_hop_dong, HD.ngay_ket_thuc, 
+(DV.chi_phi_thue + DVDK.gia*HDCT.so_luong) as "Tổng tiền"
 from khach_hang KH
 left join hop_dong HD
-on HD.idKhachHang = KH.idKhachHang
+on HD.id_khach_hang = KH.id_khach_hang
 left join loai_khach LK
-on KH.idKhachHang = LK.idLoaiKhach
+on KH.id_khach_hang = LK.id_loai_khach
 left join dich_vu DV
-on HD.idDichVu = DV.idDichVu
+on HD.id_dich_vu = DV.id_dich_vu
 left join kieu_thue KT
-on DV.idKieuThue = KT.idKieuThue
+on DV.id_kieu_thue = KT.id_kieu_thue
 left join hop_dong_chi_tiet HDCT
-on HDCT.idHopDong = HD.idHopDong
+on HDCT.id_hop_dong = HD.id_hop_dong
 left join dich_vu_di_kem DVDK
-on DVDK.idDichVuDiKem = HDCT.idDichVuDiKem;
+on DVDK.id_dich_vu_di_kem = HDCT.id_dich_vu_di_kem;
 
--- 6.	Hiển thị IDDichVu, TenDichVu, DienTich, ChiPhiThue, TenLoaiDichVu của tất cả các loại Dịch vụ 
+-- 6.	Hiển thị id_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại Dịch vụ 
 -- chưa từng được Khách hàng thực hiện đặt từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).
-select DV.idDichVu, DV.tenDichVu, DV.dienTich, DV.chiPhithue, LDV.tenLoaiDichVu as "loại dịch vụ"
+select DV.id_dich_vu, DV.ten_dich_vu, DV.dien_tich, DV.chi_phi_thue, LDV.ten_loai_dich_vu as "loại dịch vụ"
 from dich_vu DV
 right join loai_dich_vu LDV
-on DV.idLoaiDichVu = LDV.idLoaiDichVu
+on DV.id_loai_dich_vu = LDV.id_loai_dich_vu
 right join hop_dong HD
-on DV.idDichVu = HD.idDichVu
-where (year(HD.ngayLamHopDong) > '2019') or ((year(HD.ngayLamHopDong) = 2019) and month(HD.ngayLamHopDong) >3) or DV.idDichVu is null;
+on DV.id_dich_vu = HD.id_dich_vu
+where (year(HD.ngay_lam_hop_dong) > '2019') or ((year(HD.ngay_lam_hop_dong) = 2019) and month(HD.ngay_lam_hop_dong) >3) or DV.id_dich_vu is null;
 
--- 7.	Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu của tất cả 
+-- 7.	Hiển thị thông tin id_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả 
 -- các loại dịch vụ đã từng được Khách hàng đặt phòng trong năm 2018 nhưng chưa từng được Khách hàng đặt phòng trong năm 2019.
-select DV.idDichVu, DV.tenDichVu, DV.dienTich, DV.soNguoiToiDa, DV.chiPhiThue, LDV.tenLoaiDichVu
+select DV.id_dich_vu, DV.ten_dich_vu, DV.dien_tich, DV.so_nguoi_toi_da, DV.chi_phi_thue, LDV.ten_loai_dich_vu
 from dich_vu DV
 right join loai_dich_vu LDV
-on LDV.idLoaiDichVu = DV.idLoaiDichVu
+on LDV.id_loai_dich_vu = DV.id_loai_dich_vu
 right join hop_dong HD
-on HD.idDichVu = DV.idDichVu
-where (year(HD.ngayLamHopDong) = 2018) and not (year(HD.ngayLamHopDong) < 2018 or (year(HD.ngayLamHopDong) > 2018));
+on HD.id_dich_vu = DV.id_dich_vu
+where (year(HD.ngay_lam_hop_dong) = 2018) and not (year(HD.ngay_lam_hop_dong) < 2018 or (year(HD.ngay_lam_hop_dong) > 2018));
 
--- 8.	Hiển thị thông tin HoTenKhachHang có trong hệ thống, với yêu cầu HoThenKhachHang không trùng nhau.
+-- 8.	Hiển thị thông tin ho_tenKhachHang có trong hệ thống, với yêu cầu HoThenKhachHang không trùng nhau.
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên
 -- cách 1
-select KH.idKhachHang, KH.hoTen, count(KH.idKhachHang)
+select KH.id_khach_hang, KH.ho_ten, count(KH.id_khach_hang)
 from khach_hang KH
 left join hop_dong HD
-on HD.idKhachHang = KH.idKhachHang
-group by KH.idKhachHang;
+on HD.id_khach_hang = KH.id_khach_hang
+group by KH.id_khach_hang;
+
 -- cách 2
-select distinct KH.idKhachHang, KH.hoTen
+select distinct KH.id_khach_hang, KH.ho_ten
 from khach_hang KH
 left join hop_dong HD
-on HD.idKhachHang = KH.idKhachHang;
+on HD.id_khach_hang = KH.id_khach_hang;
+
 -- cách 3
-select KH.idKhachHang, KH.hoTen
+select KH.id_khach_hang, KH.ho_ten
 from khach_hang KH;
 
 -- 9. Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 
 -- thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
-select hop_dong.ngayLamHopDong, count(hop_dong.ngayLamHopDong) as 'Tổng'
-from hop_dong
-join dich_vu
-on hop_dong.idDichVu = dich_vu.idDichVu
-where year(hop_dong.ngayLamHopDong) = '2019'
-group by month(hop_dong.ngayLamHopDong);
+select HD.ngay_lam_hop_dong, count(HD.ngay_lam_hop_dong) as 'Tổng'
+from hop_dong HD
+join dich_vu DV
+on HD.id_dich_vu = DV.id_dich_vu
+where year(HD.ngay_lam_hop_dong) = '2019'
+group by month(HD.ngay_lam_hop_dong);
 
 
 -- 10.	Hiển thị thông tin tương ứng với từng Hợp đồng thì đã sử dụng bao nhiêu Dịch vụ đi kèm. 
--- Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienDatCoc, SoLuongDichVuDiKem 
--- (được tính dựa trên việc count các IDHopDongChiTiet).
-select HD.idHopDong, HD.ngayLamHopDong, HD.ngayKetThuc, HD.tienDatCoc, DVDK.tenDichVuDiKem, HDCT.soLuong as 'số lượng dịch vụ đi kèm'
+-- Kết quả hiển thị bao gồm id_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luongDichVuDiKem 
+-- (được tính dựa trên việc count các id_hop_dong_chi_tiet).
+select HD.id_hop_dong, HD.ngay_lam_hop_dong, HD.ngay_ket_thuc, HD.tien_dat_coc, DVDK.ten_dich_vu_di_kem, HDCT.so_luong as 'số lượng dịch vụ đi kèm'
 from hop_dong HD
 join hop_dong_chi_tiet HDCT
-on HDCT.idHopDong = HD.idHopDong
+on HDCT.id_hop_dong = HD.id_hop_dong
 join dich_vu_di_kem DVDK
-on DVDK.idDichVuDiKem = HDCT.idDichVuDiKem
-group by HDCT.idHopDongChiTiet;
+on DVDK.id_dich_vu_di_kem = HDCT.id_dich_vu_di_kem
+group by HDCT.id_hop_dong_chi_tiet;
 
 -- 11.	Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng
--- có TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
+-- có ten_loai_khachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
 
-select DVDK.tenDichVuDiKem, KH.hoTen, DVDK.gia
+select DVDK.ten_dich_vu_di_kem, KH.ho_ten, DVDK.gia
 from dich_vu_di_kem DVDK
 join hop_dong_chi_tiet HDCT
-on HDCT.idDichVuDiKem
+on HDCT.id_dich_vu_di_kem
 join hop_dong HD
-on HDCT.idHopDong = HD.idHopDong
+on HDCT.id_hop_dong = HD.id_hop_dong
 join khach_hang KH
-on HD.idKhachHang = KH.idKhachHang
+on HD.id_khach_hang = KH.id_khach_hang
 join loai_khach LK
-on LK.idLoaiKhach = KH.idKhachHang
-where LK.tenLoaiKhach = "Diamond" 
-and (KH.diaChi = "Quảng Ngãi" or KH.diaChi = "Quảng Ngãi");
+on LK.id_loai_khach = KH.id_khach_hang
+where LK.ten_loai_khach = "Diamond" 
+and (KH.dia_chi = "Quảng Ngãi" or KH.dia_chi = "Quảng Ngãi");
 
--- 12.	Hiển thị thông tin IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, SoLuongDichVuDikem 
--- (được tính dựa trên tổng Hợp đồng chi tiết), TienDatCoc của tất cả các dịch vụ đã từng được khách hàng đặt vào 
+-- 12.	Hiển thị thông tin id_hop_dong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, ten_dich_vu, so_luongDichVuDikem 
+-- (được tính dựa trên tổng Hợp đồng chi tiết), tien_dat_coc của tất cả các dịch vụ đã từng được khách hàng đặt vào 
 -- 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
-select HD.idHopDong, NV.hoTen, KH.hoTen, KH.sdt, DV.tenDichVu, HDCT.soLuong, HD.tienDatCoc
+select HD.id_hop_dong, NV.ho_ten, KH.ho_ten, KH.sdt, DV.ten_dich_vu, HDCT.so_luong, HD.tien_dat_coc
 from hop_dong HD
 join nhan_vien NV
-on HD.idNhanVien = NV.idNhanVien
+on HD.id_nhan_vien = NV.id_nhan_vien
 join khach_hang KH
-on KH.idKhachHang = HD.idKhachHang
+on KH.id_khach_hang = HD.id_khach_hang
 join dich_vu DV
-on DV.idDichVu = HD.idDichVu
+on DV.id_dich_vu = HD.id_dich_vu
 join hop_dong_chi_tiet HDCT
-on HDCT.idHopDong = HD.idHopDong
-where  year(HD.ngayLamHopDong) = '2019' and month(HD.ngayLamHopDong) > 9
-and HD.idDichVu not in (
-select HD.idHopDong
+on HDCT.id_hop_dong = HD.id_hop_dong
+where year(HD.ngay_lam_hop_dong) = '2019' and month(HD.ngay_lam_hop_dong) > 9
+and HD.id_dich_vu not in (
+select HD.id_hop_dong
 from hop_dong HD
 join khach_hang KH
-on KH.idKhachHang = HD.idKhachHang
+on KH.id_khach_hang = HD.id_khach_hang
 join dich_vu DV 
-on DV.idDichVu = HD.idDichVu
+on DV.id_dich_vu = HD.id_dich_vu
 join hop_dong_chi_tiet HDCT
-on HDCT.idHopDong = HD.idHopDong
+on HDCT.id_hop_dong = HD.id_hop_dong
 join dich_vu_di_kem DVDK
-on DVDK.idDichVuDiKem = HDCT.idHopDongChiTiet
-where  year(HD.ngayLamHopDong) = '2019' and month(HD.ngayLamHopDong) <=6); 
+on DVDK.id_dich_vu_di_kem = HDCT.id_hop_dong_chi_tiet
+where  year(HD.ngay_lam_hop_dong) = '2019' and month(HD.ngay_lam_hop_dong) <=6); 
 
+-- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
+-- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
 
+select HDCT.id_dich_vu_di_kem, DVDK.id_dich_vu_di_kem, DVDK.ten_dich_vu_di_kem, DVDK.gia, DVDK.don_vi, DVDK.trang_thai_kha_dung, count(HDCT.id_dich_vu_di_kem)
+from hop_dong_chi_tiet HDCT
+join dich_vu_di_kem DVDK
+on HDCT.id_dich_vu_di_kem = DVDK.id_dich_vu_di_kem
+group by HDCT.id_dich_vu_di_kem
+having count(HDCT.id_dich_vu_di_kem) >= all
+(select count(HDCT.id_dich_vu_di_kem)
+from hop_dong_chi_tiet HDCT
+join dich_vu_di_kem DVDK
+on HDCT.id_dich_vu_di_kem = DVDK.id_dich_vu_di_kem
+group by HDCT.id_dich_vu_di_kem
+);
+
+-- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm IDHopDong, 
+-- TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.
+
+select HD.id_hop_dong, HDCT.id_dich_vu_di_kem, DVDK.ten_dich_vu_di_kem,  sum(HDCT.so_luong) as Tong
+from hop_dong HD
+join hop_dong_chi_tiet HDCT
+on HDCT.id_hop_dong = HD.id_hop_dong
+join dich_vu_di_kem DVDK
+on DVDK.id_dich_vu_di_kem = HDCT.id_dich_vu_di_kem
+group by DVDK.ten_dich_vu_di_kem
+having tong = 1;
+
+-- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, TenBoPhan, SoDienThoai,
+-- DiaChi mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
+
+select NV.id_nhan_vien, NV.ho_ten, NV.id_trinh_do, NV.id_bo_phan, NV.sdt, NV.dia_chi, HD.ngay_lam_hop_dong, count(HD.ngay_lam_hop_dong) as Tong
+from nhan_vien NV
+join hop_dong HD
+on HD.id_nhan_vien = NV.id_nhan_vien
+where year(HD.ngay_lam_hop_dong) = '2019' or year(HD.ngay_lam_hop_dong) = '2018'
+group by HD.ngay_lam_hop_dong
+having Tong <=3;
+
+-- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
+
+-- SET SQL_SAFE_UPDATES = 0;
+delete from nhan_vien NV
+where NV.id_nhan_vien not in
+(select HD.id_nhan_vien
+from hop_dong HD
+where year(HD.ngay_lam_hop_dong) between '2017' and '2019'); 
