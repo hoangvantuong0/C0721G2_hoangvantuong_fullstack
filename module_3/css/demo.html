@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vie">
+<head>
+  <style>
+    .header {
+      width: 100%;
+      clear: both;
+      margin-bottom: 10px;
+    }
+
+    .header li {
+      list-style: none;
+      width: 100px;
+      height: 30px;
+      float: left;
+      background-color: black;
+      color: azure;
+      cursor: pointer;
+      position: relative;
+      padding:0 20px;
+      line-height: 30px;
+    }
+    .header ul ul {
+      visibility: hidden;
+      position: absolute;
+    }
+    .header ul li:hover ul {
+      visibility: visible;
+    }
+    .header li:hover {
+      background-color: red;
+    }
+  </style>
+</head>
+
+  <div class="header">
+      <ul>
+          <li>Logo</li>
+          <li>Home</li>
+          <li> About
+              <ul class="dropdown">
+                  <li>MU</li>
+                  <li>MC</li>
+                  <li>Arsenal</li>
+                  <li>Chelsea</li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+</body>
+</html>
+
+

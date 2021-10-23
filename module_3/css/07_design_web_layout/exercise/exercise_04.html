@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    *{
+        box-sizing: border-box;
+    }
+
+    [class*="col-"]{
+        float: left;
+        padding: 5px;
+    }
+    .row::after{
+        clear: both;
+        display: block;
+        content: "";
+    }
+    .header-title{
+        background-color: lightgray;
+        font-size: 20px;
+        font-style: italic;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .header-title-cartoon{
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+    }
+    .menu{
+        background-color: lightgray;
+        text-align: center;
+        margin-top: 3px;
+        font-family: Arial;
+    }
+    .footer{
+        text-align: center;
+        font-family: Arial;
+        font-size: 13px;
+    }
+    @media only screen and (max-width: 768px) {
+        [class*="col-"]{
+            width: 100%;
+        }
+        .header-title-cartoon{
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="row header-title">
+<div class="col-12">Phim <span class="header-title-cartoon">Hoạt Hình</span></div>
+</div>
+<div class="row menu">
+    <div class="col-12">
+        Phim hoạt hình | Phim hoạt hình yêu thích | Nhân vật phim hoạt hình | góp ý
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+        <div class="col-12">
+            <video width="100%" controls>
+                <source src="https://www.youtube.com/watch?v=6LiOvVmsahY">
+            </video>
+            <h4>welcome đến với khách sạn Nobi<span> - 3.253.264 lượt xem</span></h4>
+            <p>Channel fun</p>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" controls>
+                    <source src="https://www.youtube.com/watch?v=6LiOvVmsahY">
+                </video>
+                <h4>Suneo khổng lồ<span> - 3.253.264 lượt xem</span></h4>
+                <p>Doreamon Vietsub</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" controls>
+                    <source src="https://www.youtube.com/watch?v=6LiOvVmsahY">
+                </video>
+                <h4>Còi điều khiển vật<span> - 3.253.264 lượt xem</span></h4>
+                <p>Doreamon Vietsub</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" controls>
+                    <source src="https://www.youtube.com/watch?v=6LiOvVmsahY">
+                </video>
+                <h3>Tớ là Mari<span> - 3.253.264 lượt xem</span></h3>
+                <p>Tác giả</p>
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn
+                    nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng.
+                    Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn đón xem và cảm nhận.
+                </p>
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn
+                    nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng.
+                    Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn đón xem và cảm nhận.
+                    </p>
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn
+                    nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng.
+                    Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn đón xem và cảm nhận.</br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">&copy; 2017 - Thiết kế web bởi trang hoathinhvn.net</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

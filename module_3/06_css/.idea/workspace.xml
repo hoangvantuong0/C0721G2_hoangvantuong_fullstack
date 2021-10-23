@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93d9aece-9ca7-4cc5-b9a9-6b2db27f3b9f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/06_css.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_01/css_01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_01/nhung_css_vao_trang_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_02/exercise_02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/exercise_03.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/tangchetchuacungbangha.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/trangquynh1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/trangquynh2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/trangquynh3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/trangquynh4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/exercise_03/trangquynh5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/demo.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1zjFNqkG6PRB4BJ1uO7UHrbAlIb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/07_design_web_layout/exercise/img" />
+      <recent name="$PROJECT_DIR$/06_css" />
+      <recent name="$PROJECT_DIR$/exercise/exercise_03" />
+      <recent name="$PROJECT_DIR$/exercise/exercise_01" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93d9aece-9ca7-4cc5-b9a9-6b2db27f3b9f" name="Changes" comment="" />
+      <created>1634653554046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634653554046</updated>
+      <workItem from="1634653555490" duration="867000" />
+      <workItem from="1634723676882" duration="5231000" />
+      <workItem from="1634819727877" duration="6817000" />
+      <workItem from="1634886218231" duration="10073000" />
+      <workItem from="1634957366909" duration="8959000" />
+      <workItem from="1634989071769" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
