@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://kit.fontawesome.com/4699873430.js" crossorigin="anonymous"></script>
+
 <style>
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -21,32 +21,106 @@
     *{
         box-sizing: border-box;
     }
-    .img{
+    [class*="col-"]{
         float: left;
+        padding: 5px;
+        text-align: center;
     }
-
+    .row::after{
+        clear: both;
+        display: block;
+        content: "";
+    }
+    @media only screen and (max-width: 768px) {
+        [class*="col-"] {
+            width: 100%;
+        }
+    }
+    /*.left{*/
+    /*   text-align: left;*/
+    /*}*/
+    /*.content{*/
+    /*    float: left;*/
+    /*}*/
+/*.right{*/
+/*    float: left;*/
+/*}*/
 </style>
 
 </head>
 <body>
-<div class="header col-3">
-    <div class="col-4">
-    <div class="img">
-        <img src="img/facebook.png" width="25px">
-    </div>
-        <div>
-            <img src="img/home.png" width="25px">
+<div class="row header">
+    <div class="col-12">
+        <div class="col-3">
+            <img src="img/facebook.png" width="25px">
+            <img src="img/lookfor.png" width="25px">
         </div>
-        <img src="img/watch.png" width="25px">
-        <img src="img/market-place.png" width="25px">
-        <img src="img/group.png" width="25px">
-        <img src="img/abc.png" width="25px">
-        <img src="img/messenger.png" width="25px">
-        <img src="img/thongbao.png" width="25px">
-    </div>
-    <div>
+        <div class="col-6">
+            <img src="img/home.png" width="25px">
+            <img src="img/watch.png" width="25px">
+            <img src="img/market-place.png" width="25px">
+            <img src="img/group.png" width="25px">
+        </div>
+        <div class="col-3">
+            <img src="img/abc.png" width="25px">
+            <img src="img/messenger.png" width="25px">
+            <img src="img/thongbao.png" width="25px">
+        </div>
     </div>
 </div>
+<div class="row">
+<div class="col-3">
+    <div class="row left">
+    <div class="col-12">
+        <img src="img/friend.png" width="25px">
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/group.png" width="25px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/market-place.png" width="25px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/watch.png" width="25px">
+        </div>
+    </div>
+</div>
+    <div class="row content">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                BÀN VỀ “SÚNG ỐNG, ĐẠN DƯỢC”
+                Khi nói về vũ khí, chúng ta thường nghe đến cụm từ “súng ống, đạn dược”. “Súng” và “đạn” thì hẳn ai cũng biết, vậy còn “ống” và “dược” nghĩa là gì? Chúng có liên hệ gì với “súng” và “đạn” hay không?
+                Về từ “ống”, Tự vị Annam Latinh của Pierre Pigneaux de Béhaine do Hồng Nhuệ Nguyễn Khắc Xuyên dịch (phần La Tinh) có giảng: “Ống đồng. Thứ ống để bắn tên hoặc bắn đạn”. Như vậy, ta có thể thấy “ống” cũng là một dạng vũ khí. Còn “súng” được giải thích trong Từ điển tiếng Việt do Hoàng Phê chủ biên là “tên gọi chung các loại vũ khí có nòng hình ống”. Căn cứ vào hai định nghĩa trên thì “súng” đi với “ống” không có gì lạ.
+                Vậy còn “dược” thì sao? Để hiểu được nghĩa của từ này, ta cần xét cả cụm “đạn dược”. Thực tế, đây là một danh ngữ đẳng lập được mượn thẳng từ tiếng Hán, gồm có "đạn" (彈)  và "dược" (藥). "Đạn" (彈) chỉ chung cho pháo đạn, lựu đạn, tạc đạn, ...; còn "dược" là bao gồm những thức như "trá dược" (炸藥) － thuốc nổ, "hỏa dược" (火藥) － thuốc súng. Chính bởi nghĩa này mà "dược" mới được ghép vào chung với "đạn" thành "đạn dược", ý muốn nói về một khái niệm tổng hợp mà tiếng Anh gọi là "ammunition", thường gọi tắt là "ammo", tức là dùng để chỉ đạn, lựu đạn, bom, mìn, tên lửa,....
+                Tóm lại, trong “súng ống, đạn dược” thì “ống” là một thứ vũ khí, còn “dược” chỉ những loại thuốc súng, thuốc nổ.
+                (Tham khảo Chuyện đông chuyện tây và một số bài viết của học giả An Chi)
+                (Tham khảo Chuyện đông chuyện tây và một số bài viết của học giả An Chi)
+                Kh Ng tổng hợp
+                --------------------------------------------------------
+                Đăng ký khoá học biên kịch căn bản: https://tinyurl.com/bkcb-3-dang-ky
+                Xem miêu tả trang để biết chi tiết các hình thức quyên góp hỗ trợ tài chính giúp Tiếng Việt giàu đẹp có thêm nhiều bài viết thú vị!
+            </div>
+            </div>
+            <img src="img/content.jpeg" style=" width: 400px">
+    </div>
+    </div>
 
+    <div class="row right">
+        <div class="col-3">
+            <div class="row">
+                <div class="col-12">
+            <img src="img/right.png" width="150px">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
 </body>
 </html>
