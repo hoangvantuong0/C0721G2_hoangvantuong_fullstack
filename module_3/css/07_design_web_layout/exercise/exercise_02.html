@@ -35,19 +35,21 @@
             background-color: #FFFFFF;
             /*position: fixed;*/
         }
+
+.fixed{
+    /*margin-top: 0px;*/
+    width: 100%;
+    position: fixed;
+}
         .left{
           padding-top: 15px;
         }
-.col-2{
-    background-color: #F5F5F5;
-}
+        .col-2{
+        background-color: #F5F5F5;
+        }
         @media only screen and (max-width: 768px) {
             [class*="col-"] {
                 width: 100%;
-            }
-            .header{
-                background-color: lightblue;
-                position: fixed;
             }
         }
 
@@ -55,6 +57,7 @@
 
     </head>
     <body>
+        <div class="fixed">
     <div class="row header">
         <div class="col-12">
             <div class="col-3">
@@ -90,7 +93,8 @@
                 <img src="img/thongbao.png" width="25px">
                     </div>
             </div>
-        </div>
+    </div>
+    </div>
     </div>
     <div class="row">
     <div class="col-2">
