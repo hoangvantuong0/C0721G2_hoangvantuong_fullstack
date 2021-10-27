@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="335168a4-1994-4882-8653-2c5b426dd65f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../module_1/module_1/Module1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module_1/module_1/Module1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/Servlet_exercise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/result.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="202ffqA4cShXiNXY5nEYHPzLr4J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="335168a4-1994-4882-8653-2c5b426dd65f" name="Changes" comment="" />
+      <created>1635247708761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635247708761</updated>
+      <workItem from="1635247710673" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
