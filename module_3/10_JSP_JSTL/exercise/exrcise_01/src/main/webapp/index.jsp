@@ -22,7 +22,6 @@
       <td><c:out value="${CustomerObj.dateOfBirth}"/></td>
       <td><c:out value="${CustomerObj.address}"/></td>
       <td><img src=" <c:out value="${CustomerObj.img}"/>" width="100px"></td>
-
     </tr>
     </c:forEach>
   </table>
