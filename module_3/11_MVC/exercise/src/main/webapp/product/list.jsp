@@ -13,9 +13,10 @@
 </head>
 <body>
 <h1>Product</h1>
-<p>
-    <a href="/products?actionUser=create">Create new product</a>
-</p>
+<form action="/products?actionUser=search" method="post">
+    <input type="text" name="name" placeholder="Enter search name">
+    <input type="submit" value="Search">
+</form>
 <table border="1px">
     <tr>
         <td>Id sản phẩm</td>

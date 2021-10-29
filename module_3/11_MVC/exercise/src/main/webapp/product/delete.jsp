@@ -8,7 +8,7 @@
 <p>
   <a href="/products">Back to product list</a>
 </p>
-<form method="get">
+<form method="post">
   <h3>Are you sure?</h3>
   <fieldset>
     <legend>Product information</legend>

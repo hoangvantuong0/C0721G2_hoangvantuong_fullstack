@@ -35,4 +35,8 @@ this.iProductRepository.save(product);
     public void remove(int id) {
         this.iProductRepository.remove(id);
     }
+    @Override
+    public List<Product> findByName(String name) {
+        return this.iProductRepository.findByName(name);
+    }
 }

@@ -45,4 +45,15 @@ public class ProductRepository implements IProductRepository {
     public void remove(int id) {
         productMap.remove(id);
     }
+    @Override
+    public List< Product > findByName(String name) {
+        ArrayList< Product > productList = new ArrayList();
+        for (Map.Entry< Integer, Product > map : productMap.entrySet()) {
+            if (map.getValue().getName().contains(name)) {
+                productList.add(map.getValue());
+            }
+        }
+        return productList;
+    }
+
 }

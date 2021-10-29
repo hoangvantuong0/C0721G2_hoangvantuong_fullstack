@@ -13,13 +13,13 @@
 <p>
   <a href="/products">Quay lại danh sách sản phẩm</a>
 </p>
-<form method="get">
+<form method="post">
   <fieldset>
     <legend>Thông tin sản phẩm</legend>
     <table>
       <tr>
         <td>id sản phẩm: </td>
-        <td><input type="text" name="id" id="id" value="${requestScope["product"].getId()}"></td>
+        <td><input hidden type="text" name="id" id="id" value="${requestScope["product"].getId()}"></td>
       </tr>
       <tr>
         <td>Tên sản phẩm: </td>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", urlPatterns = "/customers")
+@WebServlet(name = "CustomerServlet", urlPatterns = {"","/customers"})
 public class CustomerServlet extends HttpServlet {
 
     private final CustomerService customerService = new CustomerServiceImpl();
@@ -37,7 +37,30 @@ public class CustomerServlet extends HttpServlet {
                 break;
         }
     }
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                showCreateForm(request, response);
+                break;
+            case "edit":
+                showEditForm(request, response);
+                break;
+            case "delete":
+                showDeleteForm(request, response);
+                break;
+            case "view":
+                viewCustomer(request, response);
+                break;
+            default:
+                listCustomers(request, response);
+                break;
+        }
+    }
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = this.customerService.findById(id);
@@ -100,30 +123,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                showCreateForm(request, response);
-                break;
-            case "edit":
-                showEditForm(request, response);
-                break;
-            case "delete":
-                showDeleteForm(request, response);
-                break;
-            case "view":
-                viewCustomer(request, response);
-                break;
-            default:
-                listCustomers(request, response);
-                break;
-        }
-    }
+
 
     private void viewCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
