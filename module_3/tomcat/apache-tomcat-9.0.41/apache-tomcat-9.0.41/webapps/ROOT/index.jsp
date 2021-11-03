@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: macbook
-  Date: 02/11/2021
-  Time: 19:33
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -37,13 +31,13 @@
           <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home?notice=employee">Employee</a>
+          <a class="nav-link text-light" href="employee">Employee</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home?notice=customer">Customer</a>
+          <a class="nav-link text-light" href="customer">Customer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home?notice=service">Service</a>
+          <a class="nav-link text-light" href="/home?action=service">Service</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="/home?notice=service">Contract</a>
@@ -77,7 +71,7 @@
 <div class="container-fluid bg-success m-auto text-light ">
   <div class="row">
     <div align="center">
-      <p class="fs-6">© 2005 – 2021 Công ty TNHH Tư nhân Agoda</p>
+      <p class="fs-6">© 2005 – 2021 welcome to Furama Resort</p>
     </div>
   </div>
 
