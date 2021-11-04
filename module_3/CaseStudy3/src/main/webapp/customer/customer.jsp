@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
 <div class="container-fluid">
@@ -66,8 +65,8 @@
                         </form>
                     </div>
                     <div class="col-6" style="text-align: right">
-                        <form action="/home?notice=employee&note=search" method="post">
-                            <label> <input type="search" name="countryName" placeholder="Country name"></label>
+                        <form action="/customer?note=search" method="post">
+                            <label> <input type="search" name="name" placeholder="enter name"></label>
                             <button type="submit" class="btn btn-primary text-white">Search</button>
                         </form>
                     </div>
@@ -79,15 +78,14 @@
                     <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Customer Type Name</th>
                         <th>Name</th>
+                        <th>Id Card</th>
                         <th>Birth Day</th>
                         <th>Gender</th>
-                        <th>Id Card</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Address</th>
-                        <th>Customer Type Id</th>
-                        <th>Customer Type Name</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -96,17 +94,45 @@
                     <c:forEach var="customer" items="${customerList}">
                         <tr>
                             <td>${customer.id}</td>
+                            <td>${customer.customerType.name}</td>
                             <td>${customer.name}</td>
+                            <td>${customer.idCard}</td>
                             <td>${customer.birthday}</td>
                             <td>${customer.gender}</td>
-                            <td>${customer.idCard}</td>
                             <td>${customer.phone}</td>
                             <td>${customer.email}</td>
                             <td>${customer.address}</td>
-                            <td>${customer.customerType.id}</td>
-                            <td>${customer.customerType.name}</td>
-                            <td><a href="home?notice=customer&action=edit&id=${customer.id}">Edit</a></td>
-                            <td><a href="home?notice=delete&note=delete&id=${customer.id}">Delete</a></td>
+                            <td class="text-center">
+                                <a href="/customer?action=edit&id=${customer.getId()}"
+                                   role="button" class="btn btn-large btn-warning">Edit</a>
+
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal-${customer.id}">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <div class="modal fade" id="exampleModal-${customer.id}" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bạn có muốn xoá customer có id =${customer.id} và tên: ${customer.name} không?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <a href="/customer?action=delete&id=${customer.id}" role="button">xác nhận</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -121,8 +147,11 @@
 
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 </body>
 </html>

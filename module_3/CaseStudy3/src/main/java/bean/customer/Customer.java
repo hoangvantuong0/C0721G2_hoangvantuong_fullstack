@@ -2,6 +2,7 @@ package bean.customer;
 
 public class Customer {
     private int id;
+    private CustomerType customerType;
     private String name;
     private String birthday;
     private String gender;
@@ -9,14 +10,14 @@ public class Customer {
     private String phone;
     private String email;
     private String address;
-    private CustomerType customerType;
 
     public Customer() {
     }
 
-    public Customer(int id, String name, String birthday, String gender,
-                    String idCard, String phone, String email, String address, CustomerType customerType) {
+    public Customer(int id, CustomerType customerType, String name, String birthday,
+                    String gender, String idCard, String phone, String email, String address) {
         this.id = id;
+        this.customerType = customerType;
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -24,7 +25,6 @@ public class Customer {
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.customerType = customerType;
     }
 
     public int getId() {
@@ -33,6 +33,14 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 
     public String getName() {
@@ -89,13 +97,5 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public CustomerType getCustomerType() {
-        return customerType;
-    }
-
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
     }
 }

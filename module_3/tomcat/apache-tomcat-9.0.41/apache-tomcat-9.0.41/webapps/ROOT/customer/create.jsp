@@ -62,13 +62,18 @@
             </p>
         </div>
         <div class="form-group col-12">
+            <label class="col-12 float-left">Id:</label>
+            <input type="text" name="id" class="form-control col-12 float-left mt-2"
+                   placeholder="Enter Id">
+        </div>
+        <div class="form-group col-12">
             <label class="col-12 float-left">Name:</label>
             <input type="text" name="name" class="form-control col-12 float-left mt-2"
                    placeholder="Enter Name">
         </div>
         <div class="form-group col-12">
             <label class="col-12 float-left">Birth day:</label>
-            <input type="text" name="birthDay" class="form-control col-12 float-left mt-2"
+            <input type="date" name="birthDay" class="form-control col-12 float-left mt-2"
                    placeholder="Enter Birth day">
         </div>
         <div class="form-group col-12">
@@ -98,15 +103,15 @@
         </div>
         <div class="form-group col-12">
             <label class="col-12 float-left mt-1" for="exampleInputPosition">Customer Type</label>
-            <select name="customer_type_id" id="exampleInputPosition" class="form-control col-12 float-left">
+            <select name="id_customer_type" id="exampleInputPosition" class="form-control col-12 float-left">
                 <option>Choose option</option>
                 <c:forEach var="item" items="${customerType}">
-                    <option value="${item.id}">${item.id} - ${item.name}</option>
+                    <option value="${item.getId()}">${item.getId()} - ${item.getName()}</option>
                 </c:forEach>
             </select>
         </div>
         <button type="submit" class="btn btn-primary float-right">Create</button>
-        <a href="customer"></a><button type="button" class="btn btn-info float-right">Back</button>
+        <a href="/customer"></a><button type="button" class="btn btn-info float-right">Back</button>
     </form>
 </div>
 <div class="col-12 bg-success m-auto text-light ">
