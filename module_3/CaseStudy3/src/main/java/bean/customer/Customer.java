@@ -1,5 +1,9 @@
 package bean.customer;
 
+import bean.employee.Division;
+import bean.employee.EducationDegree;
+import bean.employee.Position;
+
 public class Customer {
     private int id;
     private CustomerType customerType;

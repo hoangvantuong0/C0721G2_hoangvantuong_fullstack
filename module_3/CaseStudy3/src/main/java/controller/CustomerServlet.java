@@ -104,16 +104,16 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(id, new CustomerType(cusTypeId, cusTypeName), name,
                 birthday, gender, idCard, phone, email, address);
         customerRepository.updateCustomer(customer);
-        showListCustomer(request,response);
+        showListCustomer(request, response);
     }
-    public static void showUpdateCustomer(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Customer customer = customerRepository.findById(id);
-        List<CustomerType> customerType = customerRepository.selectAllCustomerType();
-        request.setAttribute("customer", customer);
-        request.setAttribute("customerType", customerType);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/edit.jsp");
+        public void showUpdateCustomer(HttpServletRequest request, HttpServletResponse response) throws
+        ServletException, IOException {
+            int id = Integer.parseInt(request.getParameter("id"));
+            List< CustomerType > customerType = customerRepository.selectAllCustomerType();
+            request.setAttribute("customerType", customerType);
+            Customer customer = customerRepository.selectCustomer(id);
+            request.setAttribute("customer", customer);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("customer/edit.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {

@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item ">
-                    <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active text-light" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/home/?notice=employee">Employee</a>
@@ -72,33 +72,33 @@
                     </div>
                 </div>
             </div>
-
             <div class="container">
                 <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Customer Type Id</th>
                         <th>Customer Type Name</th>
                         <th>Name</th>
-                        <th>Id Card</th>
                         <th>Birth Day</th>
                         <th>Gender</th>
+                        <th>Id Card</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Address</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Edit & Delete</th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="customer" items="${customerList}">
                         <tr>
                             <td>${customer.id}</td>
+                            <td>${customer.customerType.id}</td>
                             <td>${customer.customerType.name}</td>
                             <td>${customer.name}</td>
-                            <td>${customer.idCard}</td>
                             <td>${customer.birthday}</td>
                             <td>${customer.gender}</td>
+                            <td>${customer.idCard}</td>
                             <td>${customer.phone}</td>
                             <td>${customer.email}</td>
                             <td>${customer.address}</td>
@@ -128,7 +128,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                         </button>
-                                        <a href="/customer?action=delete&id=${customer.id}" role="button">xác nhận</a>
+                                        <a href="/customer?action=delete&id=${customer.id}" role="button">Xác nhận</a>
                                     </div>
                                 </div>
                             </div>

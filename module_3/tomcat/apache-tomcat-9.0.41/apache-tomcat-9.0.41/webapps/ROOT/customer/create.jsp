@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item ">
-                    <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active text-light" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/employee">Employee</a>
@@ -73,7 +73,7 @@
         </div>
         <div class="form-group col-12">
             <label class="col-12 float-left">Birth day:</label>
-            <input type="date" name="birthDay" class="form-control col-12 float-left mt-2"
+            <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
                    placeholder="Enter Birth day">
         </div>
         <div class="form-group col-12">

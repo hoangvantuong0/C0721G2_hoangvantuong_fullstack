@@ -7,12 +7,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossorigin="anonymous">
-  <%--    <style>--%>
-  <%--        * {--%>
-  <%--            margin: auto;--%>
-  <%--            padding: 0px 0px;--%>
-  <%--        }--%>
-  <%--    </style>--%>
 </head>
 <body>
 <div class="container-fluid">
@@ -34,7 +28,7 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item ">
-          <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active text-light" aria-current="page" href="">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="/employee">Employee</a>
@@ -78,8 +72,8 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Birth day:</label>
-      <input type="text" name="birthDay" class="form-control col-12 float-left mt-2"
-             value="${employee.birthDay}">
+      <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
+             value="${employee.birthday}">
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Id card:</label>
@@ -108,8 +102,8 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Position:</label>
-      <select class="form-control" name="positionId">
-        <c:forEach var="position" items="${positionList}">
+      <select class="form-control" name="idPosition">
+        <c:forEach var="position" items="${positions}">
           <c:choose>
             <c:when test="${position.id == employee.getPosition().getId()}">
               <option value="${position.id}" selected> ${position.name}</option>
@@ -123,8 +117,8 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Education Degree:</label>
-      <select class="form-control" name="degreeId">
-        <c:forEach var="degree" items="${degreeList}">
+      <select class="form-control" name="idDegree">
+        <c:forEach var="degree" items="${educationDegrees}">
           <c:choose>
             <c:when test="${degree.id == employee.getEducationDegree().getId()}">
               <option value="${degree.id}" selected> ${degree.name}</option>
@@ -138,8 +132,8 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Division:</label>
-      <select class="form-control" name="divisionId">
-        <c:forEach var="division" items="${divisionList}">
+      <select class="form-control" name="idDivision">
+        <c:forEach var="division" items="${division}">
           <c:choose>
             <c:when test="${division.id == employee.getDivision().getId()}">
               <option value="${division.id}" selected> ${division.name}</option>
@@ -153,7 +147,7 @@
     </div>
     <div class="col-12 " style="padding: 2% 0%">
       <button type="submit" class="btn btn-primary float-right">Save</button>
-      <a href="">
+      <a href="/employee">
         <button type="button" class="btn btn-info float-right">Back</button>
       </a>
     </div>

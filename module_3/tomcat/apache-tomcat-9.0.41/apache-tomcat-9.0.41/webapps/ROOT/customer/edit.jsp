@@ -7,12 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous">
-    <%--    <style>--%>
-    <%--        * {--%>
-    <%--            margin: auto;--%>
-    <%--            padding: 0px 0px;--%>
-    <%--        }--%>
-    <%--    </style>--%>
 </head>
 <body>
 <div class="container-fluid">
@@ -34,7 +28,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item ">
-                    <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active text-light" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/employee">Employee</a>
@@ -46,7 +40,7 @@
                     <a class="nav-link text-light" href="/service">Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/ervice">Contract</a>
+                    <a class="nav-link text-light" href="/contract">Contract</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -98,8 +92,16 @@
         </div>
         <div class="form-group col-12">
             <label class="col-12">Gender:</label>
-            <input type="text" name="gender" class="form-control col-12 float-left mt-2"
-                   value="${customer.gender}">
+            <select name="gender" id="1" class="form-control col-12 float-left mt-2">
+                <c:if test="${customer.getGender() ==1}">
+                    <option value="1" selected>Nam</option>
+                    <option value="0" selected>Nữ</option>
+                </c:if>
+                <c:if test="${customer.getGender() ==0}">
+                    <option value="1" selected>Nam</option>
+                    <option value="0" selected>Nữ</option>
+                </c:if>
+            </select>
         </div>
         <div class="form-group col-12">
             <label class="col-12">Id card:</label>

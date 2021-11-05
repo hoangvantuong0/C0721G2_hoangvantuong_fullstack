@@ -1,9 +1,9 @@
 package bean.employee;
 
 public class Employee {
-    private  int id;
+    private int id;
     private String name;
-    private String birthDay;
+    private String birthday;
     private String idCard;
     private Double salary;
     private String phone;
@@ -12,27 +12,15 @@ public class Employee {
     private Position position;
     private EducationDegree educationDegree;
     private Division division;
+
     public Employee() {
     }
 
-    public Employee(int id, String name, String birthDay, String idCard, Double salary, String phone, String email,
-                    String address, Position position, EducationDegree educationDegree, Division division) {
+    public Employee(int id, String name, String birthday, String idCard, Double salary, String phone,
+                    String email, String address, Position position, EducationDegree educationDegree, Division division) {
         this.id = id;
         this.name = name;
-        this.birthDay = birthDay;
-        this.idCard = idCard;
-        this.salary = salary;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-        this.position = position;
-        this.educationDegree = educationDegree;
-        this.division = division;
-    }
-    public Employee(String name, String birthDay, String idCard, Double salary, String phone, String email,
-                    String address, Position position, EducationDegree educationDegree, Division division) {
-        this.name = name;
-        this.birthDay = birthDay;
+        this.birthday = birthday;
         this.idCard = idCard;
         this.salary = salary;
         this.phone = phone;
@@ -59,12 +47,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public String getIdCard() {
@@ -129,22 +117,5 @@ public class Employee {
 
     public void setDivision(Division division) {
         this.division = division;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", birthDay='" + birthDay + '\'' +
-                ", idCard='" + idCard + '\'' +
-                ", salary=" + salary +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", position=" + position +
-                ", educationDegree=" + educationDegree +
-                ", division=" + division +
-                '}';
     }
 }

@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item ">
-          <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active text-light" aria-current="page" href="">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="/employee">Employee</a>
@@ -61,13 +61,18 @@
       </p>
     </div>
     <div class="form-group col-12">
+      <label class="col-12 float-left">Id:</label>
+      <input type="text" name="id" class="form-control col-12 float-left mt-2"
+             placeholder="Enter Id">
+    </div>
+    <div class="form-group col-12">
       <label class="col-12 float-left">Name:</label>
       <input type="text" name="name" class="form-control col-12 float-left mt-2"
              placeholder="Enter Name">
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Birth day:</label>
-      <input type="text" name="birthDay" class="form-control col-12 float-left mt-2"
+      <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
              placeholder="Enter Birth day">
     </div>
     <div class="form-group col-12">
@@ -96,37 +101,53 @@
              placeholder="Enter Address">
     </div>
     <div class="form-group col-12">
-      <label class="col-12 float-left mt-1">Position:</label>
-      <select name="positionId" class="form-control col-12 float-left">
-        <option>Chose option ...</option>
-        <c:forEach var="item" items="${positionList}">
-          <option value="${item.getId()}"> ${item.getId()} - ${item.getName()} </option>
+      <label class="col-12 float-left">Position:</label>
+      <select class="form-control" name="positions">
+        <c:forEach var="item" items="${positions}">
+          <c:choose>
+            <c:when test="${item.id == employee.getPosition().getId()}">
+              <option value="${item.id}" selected> ${item.name}</option>
+            </c:when>
+            <c:otherwise>
+              <option value="${item.id}">${item.name}</option>
+            </c:otherwise>
+          </c:choose>
         </c:forEach>
       </select>
     </div>
     <div class="form-group col-12">
-      <label class="col-12 float-left mt-1">Education Degree:</label>
-      <select name="degreeId" class="form-control col-12 float-left">
-        <option>Chose option ...</option>
-        <c:forEach var="item" items="${degreeList}">
-          <option value="${item.getId()}"> ${item.getId()} - ${item.getName()} </option>
+      <label class="col-12 float-left">Education Degree:</label>
+      <select class="form-control" name="educationDegrees">
+        <c:forEach var="item" items="${educationDegrees}">
+          <c:choose>
+            <c:when test="${item.id == employee.getEducationDegree().getId()}">
+              <option value="${item.id}" selected> ${item.name}</option>
+            </c:when>
+            <c:otherwise>
+              <option value="${item.id}">${item.name}</option>
+            </c:otherwise>
+          </c:choose>
         </c:forEach>
       </select>
     </div>
     <div class="form-group col-12">
-      <label class="col-12 float-left mt-1">Division:</label>
-      <select name="divisionId" class="form-control col-12 float-left">
-        <option>Chose option ...</option>
-        <c:forEach var="item" items="${divisionList}">
-          <option value="${item.getId()}"> ${item.getId()} - ${item.getName()} </option>
+      <label class="col-12 float-left">Division:</label>
+      <select class="form-control" name="division">
+        <c:forEach var="item" items="${division}">
+          <c:choose>
+            <c:when test="${item.id == employee.getDivision().getId()}">
+              <option value="${item.id}" selected> ${item.name}</option>
+            </c:when>
+            <c:otherwise>
+              <option value="${item.id}">${item.name}</option>
+            </c:otherwise>
+          </c:choose>
         </c:forEach>
       </select>
     </div>
     <div class="col-12 " style="padding: 2% 0%">
       <button type="submit" class="btn btn-primary float-right">Create</button>
-      <a href="">
-        <button type="button" class="btn btn-info float-right">Back</button>
-      </a>
+      <a href="/customer"></a><button type="button" class="btn btn-info float-right">Back</button></a>
     </div>
   </form>
 </div>
