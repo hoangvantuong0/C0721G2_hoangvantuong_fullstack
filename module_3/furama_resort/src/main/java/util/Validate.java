@@ -17,4 +17,9 @@ public class Validate {
             return true;
         }
     }
+    public static boolean test(String name) {
+        String ID_CUSTOMER = "^(09|\\(84\\)\\+9)[01]\\d{7}$";
+        boolean b = name.matches(ID_CUSTOMER)  ;
+        return b;
+    }
 }

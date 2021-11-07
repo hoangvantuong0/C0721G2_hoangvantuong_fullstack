@@ -58,7 +58,7 @@ public class CustomerRepository implements ICustomerRepository {
         List<Customer> customerList = selectAllCustomer();
         Customer customer = null;
         for (Customer customer1 : customerList) {
-            if (customer1.getId() == id) {
+            if (customer1.getId().equals(id)) {
                 customer = customer1;
             }
         }

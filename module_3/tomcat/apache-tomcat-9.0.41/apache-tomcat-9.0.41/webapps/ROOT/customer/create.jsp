@@ -63,7 +63,12 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Id:</label>
       <input type="text" name="id" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id">
+             placeholder="Enter Id" value="${customer.getId()}">
+      <p style="color: red">
+        <c:if test="${idError != null}">
+          ${idError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left mt-1">Customer type:</label>
@@ -77,41 +82,83 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Name:</label>
       <input type="text" name="name" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Name">
+             placeholder="Enter Name" value="${customer.getName()}">
+      <p style="color: red">
+      <c:if test="${nameError != null}">
+        ${nameError}
+      </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Birth day:</label>
-      <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Birthday">
+      <input type="text" name="birthday" class="form-control col-12 float-left mt-2"
+             placeholder="Enter Birthday like this pattern 1990-12-12" value="${customer.getBirthday()}">
+      <p style="color: red">
+      <c:if test="${birthdayError != null}">
+        ${birthdayError}
+      </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Gender:</label>
-
       <select name="gender" class="form-control col-12 float-left">
         <option>Chose option ...</option>
-        <option value="Nam">Nam</option>
-        <option value="Nữ">Nữ</option>
+          <c:choose>
+            <c:when test="${customer.gender}">
+              <option value="${customer.gender}" selected> ${customer.gender}</option>
+            </c:when>
+            <c:otherwise>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+            </c:otherwise>
+          </c:choose>
+        <p style="color: red">
+          <c:if test="${genderError != null}">
+            ${genderError}
+          </c:if>
+        </p>
       </select>
+
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Id card:</label>
       <input type="text" name="idCard" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id card">
+             placeholder="Enter Id card" value="${customer.getIdCard()}">
+      <p style="color: red">
+      <c:if test="${idCardError != null}">
+        ${idCardError}
+      </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Phone:</label>
       <input type="text" name="phone" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Phone">
+             placeholder="Enter like this pattern 0901245666 or (84)+901324455" value="${customer.getPhone()}">
+      <p style="color: red">
+      <c:if test="${phoneError != null}">
+        ${phoneError}
+      </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Email:</label>
       <input type="text" name="email" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Email">
+             placeholder="Enter Email like this pattern abc@gmail.com" value="${customer.getEmail()}">
+      <p style="color: red">
+      <c:if test="${emailError != null}">
+        ${emailError}
+      </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Address:</label>
       <input type="text" name="address" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Address">
+             placeholder="Enter Address" value="${customer.getAddress()}">
+      <p style="color: red">
+      <c:if test="${addressError != null}">
+        ${addressError}
+      </c:if>
+      </p>
     </div>
     <div class="col-12 " style="padding: 2% 0%">
       <button type="submit" class="btn btn-primary float-right">Create</button>
