@@ -5,7 +5,7 @@ import bean.employee.EducationDegree;
 import bean.employee.Position;
 
 public class Customer {
-    private int id;
+    private String id;
     private CustomerType customerType;
     private String name;
     private String birthday;
@@ -18,8 +18,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, CustomerType customerType, String name, String birthday,
-                    String gender, String idCard, String phone, String email, String address) {
+    public Customer(String id, CustomerType customerType,
+                    String name, String birthday, String gender, String idCard, String phone, String email, String address) {
         this.id = id;
         this.customerType = customerType;
         this.name = name;
@@ -31,11 +31,11 @@ public class Customer {
         this.address = address;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

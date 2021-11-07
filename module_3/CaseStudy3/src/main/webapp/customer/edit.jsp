@@ -63,18 +63,18 @@
         <div class="form-group col-12">
             <label class="col-12 ">Id:</label>
             <input type="text" name="id" class="form-control col-12  mt-2"
-                   value="${customer.id}" readonly>
+                   value="${customer.getId()}" readonly>
         </div>
         <div class="form-group col-12">
             <label class="col-12 float-left">Customer Type:</label>
-            <select class="form-control" name="id_customer_type">
-                <c:forEach var="type" items="${customerType}">
+            <select class="form-control" name="customerTypeList">
+                <c:forEach var="type" items="${customerTypeList}">
                     <c:choose>
-                        <c:when test="${type.id == customer.getCustomerType().getId()}">
-                            <option value="${type.id}" selected> ${type.name}</option>
+                        <c:when test="${type.getId() == customer.getCustomerType().getId()}">
+                            <option value="${type.getId()}" selected> ${type.getName()}</option>
                         </c:when>
                         <c:otherwise>
-                            <option value="${type.id}">${type.name}</option>
+                            <option value="${type.getId()}">${type.getName()}</option>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
@@ -83,45 +83,37 @@
         <div class="form-group col-12">
             <label class="col-12">Name:</label>
             <input type="text" name="name" class="form-control col-12 float-left mt-2"
-                   value="${customer.name}">
+                   value="${customer.getName()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Birth day:</label>
             <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
-                   value="${customer.birthday}">
+                   value="${customer.getBirthday()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Gender:</label>
-            <select name="gender" id="1" class="form-control col-12 float-left mt-2">
-                <c:if test="${customer.getGender() ==1}">
-                    <option value="1" selected>Nam</option>
-                    <option value="0" selected>Nữ</option>
-                </c:if>
-                <c:if test="${customer.getGender() ==0}">
-                    <option value="1" selected>Nam</option>
-                    <option value="0" selected>Nữ</option>
-                </c:if>
-            </select>
+            <input type="text" name="gender" class="form-control col-12 float-left mt-2"
+                   value="${customer.getGender()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Id card:</label>
             <input type="text" name="idCard" class="form-control col-12 float-left mt-2"
-                   value="${customer.idCard}">
+                   value="${customer.getIdCard()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Phone:</label>
             <input type="text" name="phone" class="form-control col-12 float-left mt-2"
-                   value="${customer.phone}">
+                   value="${customer.getPhone()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Email:</label>
             <input type="text" name="email" class="form-control col-12 float-left mt-2"
-                   value="${customer.email}">
+                   value="${customer.get.Email()}">
         </div>
         <div class="form-group col-12">
             <label class="col-12">Address:</label>
             <input type="text" name="address" class="form-control col-12 float-left mt-2"
-                   value="${customer.address}">
+                   value="${customer.getAddress()}">
         </div>
 
         <div class="col-12 " style="padding: 2% 0%">
@@ -131,14 +123,6 @@
             </a>
         </div>
     </form>
-</div>
-<div class="col-12 bg-success m-auto text-light ">
-    <div class="row">
-        <div align="center">
-            <p class="fs-6">© 2005 – 2021 welcome to Furama Resort</p>
-        </div>
-    </div>
-</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

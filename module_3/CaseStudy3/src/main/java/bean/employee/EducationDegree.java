@@ -2,22 +2,22 @@ package bean.employee;
 
 
 public class EducationDegree {
-    private int id;
+    private String id;
     private String name;
 
     public EducationDegree() {
     }
 
-    public EducationDegree(int id, String name) {
+    public EducationDegree(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

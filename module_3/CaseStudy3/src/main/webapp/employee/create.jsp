@@ -63,46 +63,86 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Id:</label>
       <input type="text" name="id" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id">
+             placeholder="Enter Id" value="${employee.id}">
+      <p style="color: red">
+        <c:if test="${idError != null}">
+          ${idError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Name:</label>
       <input type="text" name="name" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Name">
+             placeholder="Enter Name" value="${employee.name}">
+      <p style="color: red">
+        <c:if test="${nameError != null}">
+          ${nameError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Birth day:</label>
       <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Birth day">
+             placeholder="Enter Birth day" value="${employee.birthday}">
+      <p style="color: red">
+        <c:if test="${birthdayError != null}">
+          ${birthdayError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Id card:</label>
       <input type="text" name="idCard" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id card">
+             placeholder="Enter Id card" value="${employee.idCard}">
+      <p style="color: red">
+        <c:if test="${IdCardError != null}">
+          ${idCardError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Salary:</label>
       <input type="text" name="salary" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Salary">
+             placeholder="Enter Salary" value="${employee.salary}">
+      <p style="color: red">
+        <c:if test="${salaryError != null}">
+          ${salaryError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Phone:</label>
       <input type="text" name="phone" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Phone">
+             placeholder="Enter Phone" value="${employee.phone}">
+      <p style="color: red">
+        <c:if test="${phoneError != null}">
+          ${phoneError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Email:</label>
       <input type="text" name="email" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Email">
+             placeholder="Enter Email" value="${employee.email}">
+      <p style="color: red">
+        <c:if test="${emailError != null}">
+          ${emailError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Address:</label>
       <input type="text" name="address" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Address">
+             placeholder="Enter Address" value="${employee.address}">
+      <p style="color: red">
+        <c:if test="${addressError != null}">
+          ${addressError}
+        </c:if>
+      </p>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Position:</label>
-      <select class="form-control" name="positions">
+      <select class="form-control" name="idPosition">
         <c:forEach var="item" items="${positions}">
           <c:choose>
             <c:when test="${item.id == employee.getPosition().getId()}">
@@ -117,7 +157,7 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Education Degree:</label>
-      <select class="form-control" name="educationDegrees">
+      <select class="form-control" name="idDegree">
         <c:forEach var="item" items="${educationDegrees}">
           <c:choose>
             <c:when test="${item.id == employee.getEducationDegree().getId()}">
@@ -132,7 +172,7 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Division:</label>
-      <select class="form-control" name="division">
+      <select class="form-control" name="idDivision">
         <c:forEach var="item" items="${division}">
           <c:choose>
             <c:when test="${item.id == employee.getDivision().getId()}">

@@ -1,7 +1,7 @@
 package bean.employee;
 
 public class Employee {
-    private int id;
+    private String id;
     private String name;
     private String birthday;
     private String idCard;
@@ -16,8 +16,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String name, String birthday, String idCard, Double salary, String phone,
-                    String email, String address, Position position, EducationDegree educationDegree, Division division) {
+    public Employee(String id, String name, String birthday, String idCard, Double salary,
+                    String phone, String email, String address, Position position, EducationDegree educationDegree, Division division) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -31,11 +31,11 @@ public class Employee {
         this.division = division;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -4,10 +4,9 @@ import bean.employee.Division;
 import bean.employee.EducationDegree;
 import bean.employee.Employee;
 import bean.employee.Position;
-import repository.customer.ICustomerRepository;
-import repository.customer.impl.CustomerRepository;
 import repository.employee.IEmployeeRepository;
 import repository.employee.impl.EmployeeRepository;
+import util.Validate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,9 +39,9 @@ public class EmployeeServlet extends HttpServlet {
                 case "delete":
                     deleteEmployee(request, response);
                     break;
-//                case "search":
-//                    searchEmployee(request, response);
-//                    break;
+                case "search":
+                    searchEmployee(request, response);
+                    break;
                 default:
                     showListEmployee(request, response);
                     break;
@@ -60,9 +59,9 @@ public class EmployeeServlet extends HttpServlet {
         }
         try {
             switch (note) {
-//                case "create":
-//                    createEmployee(request, response);
-//                    break;
+                case "create":
+                    createEmployee(request, response);
+                    break;
                 case "edit":
                     try {
                         update(request, response);
@@ -73,9 +72,9 @@ public class EmployeeServlet extends HttpServlet {
                 case "delete":
                     deleteEmployee(request, response);
                     break;
-//                case "search":
-//                    searchEmployee(request, response);
-//                    break;
+                case "search":
+                    searchEmployee(request, response);
+                    break;
                 default:
                     showListEmployee(request, response);
                     break;
@@ -84,21 +83,29 @@ public class EmployeeServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-//
-//    public void searchEmployee(HttpServletRequest request, HttpServletResponse response) throws
-//            ServletException, IOException {
-//        String employeeName = request.getParameter("employeeName");
-//        List<Employee> customerList = employeeRepository.searchEmployee(employeeName);
-//        if (customerList == null) {
-//            request.getRequestDispatcher("error-404.jsp").forward(request, response);
-//        } else {
-//            request.setAttribute("employeeList", customerList);
-//            request.getRequestDispatcher("employee/employee.jsp").forward(request, response);
-//        }
-//    }
+
+    public void searchEmployee(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        String employeeName = request.getParameter("employeeName");
+        String phone = request.getParameter("employeePhone");
+        String address = request.getParameter("employeeAddress");
+        List<Employee> employeeList = employeeRepository.searchEmployee(employeeName, phone, address);
+        if (employeeList == null) {
+            request.getRequestDispatcher("error-404.jsp").forward(request, response);
+        } else {
+            request.setAttribute("employeeList", employeeList);
+            request.getRequestDispatcher("employee/list.jsp").forward(request, response);
+        }
+//        String name = request.getParameter("nameSearch");
+//        String phone = request.getParameter("phoneSearch");
+//        String address = request.getParameter("addressSearch");
+//        List<Employee> listSearch = iEmployeeService.searchEmployee(name,phone,address);
+//        request.setAttribute("listSearch",listSearch);
+//        request.getRequestDispatcher("employee/search.jsp").forward(request,response);
+    }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String birthday = request.getParameter("birthday");
         String idCard = request.getParameter("idCard");
@@ -106,11 +113,11 @@ public class EmployeeServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        int idPosition = Integer.parseInt(request.getParameter("idPosition"));
+        String idPosition = request.getParameter("idPosition");
 //        String positionName = request.getParameter("positionName");
-        int idEduDegree = Integer.parseInt(request.getParameter("idDegree"));
+        String idEduDegree = request.getParameter("idDegree");
 //        String nameEduDegree = request.getParameter("nameEduDegree");
-        int idDivision = Integer.parseInt(request.getParameter("idDivision"));
+        String idDivision = request.getParameter("idDivision");
 //        String nameDivision = request.getParameter("nameDivision");
         Position position = new Position();
         position.setId(idPosition);
@@ -126,7 +133,7 @@ public class EmployeeServlet extends HttpServlet {
 
     public void showUpdateEmployee(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        String id = request.getParameter("id");
         List<Division> division = employeeRepository.selectAllEmpDivision();
         request.setAttribute("division", division);
         List<EducationDegree> educationDegrees = employeeRepository.selectAllEmpEduDegree();
@@ -171,34 +178,102 @@ public class EmployeeServlet extends HttpServlet {
 
     public static void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        int id = Integer.valueOf(request.getParameter("id"));
+        String id = request.getParameter("id");
         employeeRepository.deleteEmployee(id);
         showListEmployee(request, response);
     }
-}
-//    public static void createCustomer(HttpServletRequest request, HttpServletResponse response) throws
-//            ServletException, IOException {
-//        int id = Integer.valueOf(request.getParameter("id"));
-//        String name = request.getParameter("name");
-//        String birthday = request.getParameter("birthday");
-//        String gender = request.getParameter("gender");
-//        String idCard = request.getParameter("idCard");
-//        String phone = request.getParameter("phone");
-//        String email = request.getParameter("email");
-//        String address = request.getParameter("address");
-//        int cusTypeId = Integer.valueOf(request.getParameter("id_customer_type"));
-//        String cusTypeName = request.getParameter("customer_type_name");
-//        Customer customer = new Customer(id, new CustomerType(cusTypeId, cusTypeName), name,
-//                birthday, gender, idCard, phone, email, address);
-//        try {
-//            customerRepository.insertCustomer(customer);
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("customer/create.jsp");
+
+    public static void createEmployee(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+
+        Boolean flag = false;
+        String idError = "";
+        String nameError = "";
+        String birthdayError = "";
+        String idCardError = "";
+        String salaryError = "";
+        String phoneError = "";
+        String emailError = "";
+        String addressError = "";
+        String id = request.getParameter("id");
+        if (Validate.checkRegex(String.valueOf(id), Validate.NUMBER_REGEX)) {
+            flag = true;
+            idError = "wrong format! please input again!";
+        }
+
+        String name = request.getParameter("name");
+        if (Validate.checkRegex(name, Validate.NAME_REGEX)) {
+            flag = true;
+            nameError = "wrong format! please input again!";
+        }
+
+
+        String birthday = request.getParameter("birthday");
+        if (Validate.checkRegex(birthday, Validate.DATE_REGEX)){
+            flag = true;
+            birthdayError = "wrong format! please input again!";
+        }
+
+        String idCard = request.getParameter("idCard");
+        if (Validate.checkRegex(idCard, Validate.ID_CARD_REGEX)) {
+            flag = true;
+            idCardError = "Error input! please input again!";
+        }
+        Double salary = Double.valueOf(request.getParameter("salary"));
+        if (Validate.checkRegex(String.valueOf(salary), Validate.NAME_REGEX) || salary < 0) {
+            flag = true;
+            salaryError = "Error salary input! please input again";
+        }
+        String phone = request.getParameter("phone");
+        if (Validate.checkRegex(phone, Validate.PHONE_REGEX)) {
+            flag = true;
+            phoneError = "Error input! please input again!";
+        }
+
+        String email = request.getParameter("email");
+        if (Validate.checkRegex(email, Validate.EMAIL_REGEX)) {
+            flag = true;
+            emailError = "Error input! please input again!";
+        }
+        String address = request.getParameter("address");
+        if (Validate.checkRegex(address, Validate.NAME_REGEX)) {
+            flag = true;
+            addressError = "wrong format! please input again!";
+
+        }
+        String idPosition = request.getParameter("idPosition");
+        //        String positionName = request.getParameter("positionName");
+        String idEduDegree = request.getParameter("idDegree");
+        //        String nameEduDegree = request.getParameter("nameEduDegree");
+        String idDivision = request.getParameter("idDivision");
+        //        String nameDivision = request.getParameter("nameDivision");
+        Position position = new Position();
+        position.setId(idPosition);
+        EducationDegree educationDegree = new EducationDegree();
+        educationDegree.setId(idEduDegree);
+        Division division = new Division();
+        division.setId(idDivision);
+        Employee employee = new Employee(id, name, birthday, idCard, salary, phone, email, address,
+                position, educationDegree, division);
+        if (flag) {
+            request.setAttribute("idError", idError);
+            request.setAttribute("nameError", nameError);
+            request.setAttribute("birthdayError", birthdayError);
+            request.setAttribute("addressError", addressError);
+            request.setAttribute("IdCardError", idCardError);
+            request.setAttribute("salaryError", salaryError);
+            request.setAttribute("phoneError", phoneError);
+            request.setAttribute("emailError", emailError);
+            request.setAttribute("employee", employee);
+            showCreateEmployee(request, response);
+        }
+        try {
+            employeeRepository.insertEmployee(employee);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("employee/create.jsp");
 //            request.setAttribute("message", "deleted");
-//            dispatcher.forward(request, response);
-//        } catch (ServletException | IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//}
-
-
+            dispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

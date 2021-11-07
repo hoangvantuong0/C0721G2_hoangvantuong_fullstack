@@ -13,9 +13,9 @@ public interface IEmployeeRepository {
     public List<Division> selectAllEmpDivision();
     public List<Position> selectAllEmpPosition();
     public List<EducationDegree> selectAllEmpEduDegree();
-    public Employee selectEmployee(int id);
+    public Employee selectEmployee(String id);
     public void insertEmployee(Employee employee);
     public void updateEmployee(Employee employee) ;
-    public void deleteEmployee( int id) ;
-    public List<Employee> searchEmployee(String employeeName);
+    public void deleteEmployee(String id) ;
+    public List<Employee> searchEmployee(String name, String phone, String address);
 }
