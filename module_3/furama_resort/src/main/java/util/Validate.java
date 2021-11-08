@@ -9,6 +9,8 @@ public class Validate {
     public static final String PHONE_REGEX = "^(09|\\(84\\)\\+9)[01]\\d{7}$";
     public static final String EMAIL_REGEX = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$";
     public static final String DATE_REGEX = "\\d{4}-\\d{1,2}-\\d{1,2}";
+    public static final String ADDRESS_REGEX = "([A-Z][a-z]\\d)+";
+
 
     public static boolean checkRegex(String value, String regex) {
         if (value.matches(regex)) {
@@ -18,7 +20,7 @@ public class Validate {
         }
     }
     public static boolean test(String name) {
-        String ID_CUSTOMER = "^(09|\\(84\\)\\+9)[01]\\d{7}$";
+        String ID_CUSTOMER = "^([A-Z][a-z]+\\s?)+$";
         boolean b = name.matches(ID_CUSTOMER)  ;
         return b;
     }

@@ -63,7 +63,7 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Id:</label>
       <input type="text" name="id" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id" value="${customer.getId()}">
+             placeholder="Enter Id like this pattern KH-1234" value="${customer.getId()}">
       <p style="color: red">
         <c:if test="${idError != null}">
           ${idError}
@@ -91,13 +91,13 @@
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Birth day:</label>
-      <input type="text" name="birthday" class="form-control col-12 float-left mt-2"
+      <input type="date" name="birthday" class="form-control col-12 float-left mt-2"
              placeholder="Enter Birthday like this pattern 1990-12-12" value="${customer.getBirthday()}">
-      <p style="color: red">
-      <c:if test="${birthdayError != null}">
-        ${birthdayError}
-      </c:if>
-      </p>
+<%--      <p style="color: red">--%>
+<%--      <c:if test="${birthdayError != null}">--%>
+<%--        ${birthdayError}--%>
+<%--      </c:if>--%>
+<%--      </p>--%>
     </div>
     <div class="form-group col-12">
       <label class="col-12 float-left">Gender:</label>
@@ -123,7 +123,7 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Id card:</label>
       <input type="text" name="idCard" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Id card" value="${customer.getIdCard()}">
+             placeholder="Enter Id card with 9 numerals" value="${customer.getIdCard()}">
       <p style="color: red">
       <c:if test="${idCardError != null}">
         ${idCardError}
@@ -153,7 +153,7 @@
     <div class="form-group col-12">
       <label class="col-12 float-left">Address:</label>
       <input type="text" name="address" class="form-control col-12 float-left mt-2"
-             placeholder="Enter Address" value="${customer.getAddress()}">
+             placeholder="Enter Address like this pattern Da Nang" value="${customer.getAddress()}">
       <p style="color: red">
       <c:if test="${addressError != null}">
         ${addressError}

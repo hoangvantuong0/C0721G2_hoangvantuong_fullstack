@@ -140,7 +140,9 @@ public class CustomerServlet extends HttpServlet {
         String emailError = "";
         String addressError = "";
         String genderError = "";
+
         String id = request.getParameter("id");
+
         if (Validate.checkRegex(id, Validate.ID_CUSTOMER)) {
             flag = true;
             idError = "Error input! please input like this pattern: KH-1234";

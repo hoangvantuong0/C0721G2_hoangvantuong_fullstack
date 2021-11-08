@@ -68,7 +68,26 @@
     </div>
     <div class="col-9">
       <div class="col-12">
-        <p>Body</p>
+        <p><span style="font-family: Arial; font-style: italic">Khu nghỉ dưỡng Furama, tọa lạc trên bãi biển Đà Nẵng, được coi là khu nghỉ dưỡng có uy tín nhất của Việt Nam, đã vinh dự đón tiếp <br>
+          những vị khách nổi tiếng của hoàng gia cũng như những chính trị gia. Khu nghỉ dưỡng là cửa ngỏ đi đến 3 Di sản thế giới được <br> UNESCO
+          công nhận: phố cổ Hội An, thánh địa Mỹ Sơn và cố đô Huế. Kiến trúc của Furama được pha trộn thiết kế truyền thống của<br> Việt Nam và
+          kiến trúc thời Pháp thuộc, được bố trí hài hòa với 198 phòng, mỗi dãy phòng là một thiên đường của sự sang trọng và<br> khéo léo, từ
+          những tông màu trang trí ấm áp và phòng tắm rộng bằng đá cẩm thạch với quạt trần và sàn gỗ đánh bóng.</span><br>
+
+          Furama được biết đến là nơi duy nhất cung cấp dịch vụ lặn biển tại Đà Nẵng, khu nghỉ dưỡng sẽ mang đến cho du khách thích<br> khám phá
+          vẻ đẹp của Đại Dương bằng việc lặn ở một trong các bãi biển sang trọng nhất thế giới, ngoài ra còn có các môn<br> thể thao dưới nước
+          khác như chèo thuyền, lướt sóng, trượt nước, mô tô nước và thuyền chuối. Một bể bơi nước ngọt khổng<br> lồ được thiết kế ngay trung
+          tâm của khu nghỉ dưỡng, biến khu nghỉ dưỡng nó trở thành một khu hoàn toàn tách biệt với<br> thế giới bên ngoài, mang đến sự thư giãn
+          trong bầu không khí thật dịu mát. Bên cạnh đó, dịch vụ spa của khu nghỉ dưỡng <br>là nơi lý tưởng để cung cấp những phương pháp chăm
+          sóc tốt nhất cho cơ thể và sắc đẹp của du khách hàng.
+
+          Điểm nhấn của Café Indochine chính là sự đa dạng của các món ăn châu Á và sự độc đáo của các món ăn trên khắp thế giới,<br>
+          được trình bày vô cùng hấp dẫn bên trong thực đơn, nhà hàng Don Cipriani’s Italia với một sự lựa chọn khó bỏ qua của<br>
+          thực khách khi đến với các món ăn đậm nét truyền thống của Ý, nơi đây các món ăn luôn được chuẩn bị kỹ lưỡng cho <br>
+          thực khách và phong cách phục vụ hết sức chu đáo, cùng với đó….là thức uống được pha 1 cách công phu. Với không gian<br>
+          mở của quầy Bar và khu nhà hàng nằm cạnh hồ bơi đã tạo nên 1 trải nghiệm không nơi đâu có được. Nơi đây du khách sẽ <br>
+          có cảm nhận được sự ấm cúm của bầu không khí khi ngồi bên “ốc đảo xanh” đã được thiết kế để du khách có thể nhận <br>
+          ra sư lịch lãm, tiện nghi của khu nghỉ dưỡng khi thưởng thức các món ăn tại đây.</p>
       </div>
 
 
