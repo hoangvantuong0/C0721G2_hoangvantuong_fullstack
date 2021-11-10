@@ -31,16 +31,13 @@
           <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/employee">Employee</a>
+          <a class="nav-link text-light" href="/brcard?note=brList">Thẻ mượn sách</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/matbang">Mat Bang</a>
+          <a class="nav-link text-light" href="/brcard">Danh sách sách</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/service">Service</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/contract">Contract</a>
+          <a class="nav-link text-light" href="/contract">Thông tin</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -62,7 +59,8 @@
     </div>
     <div class="col-9">
       <div class="col-12">
-        <p>Body</p>
+        <p>© Welcome to codeGym Da Nang.
+        Good morning Teacher!</p>
       </div>
     </div>
   </div>

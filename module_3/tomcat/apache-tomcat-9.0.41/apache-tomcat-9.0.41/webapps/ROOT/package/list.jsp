@@ -30,16 +30,16 @@
           <a class="nav-link active text-light" aria-current="page" href="">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home/?notice=employee">Employee</a>
+          <a class="nav-link text-light" href="/home/?notice=employee">Thông tin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home?notice=customer">Customer</a>
+          <a class="nav-link text-light" href="/home?notice=customer">Chi tiết</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="/home?notice=service">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/home?notice=contract">Contract</a>
+          <a class="nav-link text-light" href="/home?notice=contract">Contact</a>
         </li>
       </ul>
     </div>
@@ -52,19 +52,19 @@
         <div class="row">
           <div class="col-3">
             <button class="btn btn-primary text-white">
-              <a class="text-white" href="/matbang?note=create">Add New Item</a>
+              <a class="text-white" href="/matbang?note=create">Thêm sách</a>
             </button>
           </div>
           <div class="col-3">
             <form action="/home?employee-notice=employee&note=sort" method="post">
-              <button type="submit" class="btn btn-primary text-white">Sort by name</button>
+              <button type="submit" class="btn btn-primary text-white">Sắp xếp</button>
             </form>
           </div>
           <div class="col-6" style="text-align: right">
             <form method="post" action="/matbang?note=search">
-              <input type="text" name="loaiMatBang" placeholder="Input loại mặt bằng">
-              <input type="text" name="giaTien" placeholder="Input giá tiền ">
-              <input type="text" name="tang" placeholder="Input số tầng">
+              <input type="text" name="loaiMatBang" placeholder="">
+              <input type="text" name="giaTien" placeholder=" ">
+              <input type="text" name="tang" placeholder="">
               <button type="submit">TÌm kiếm</button>
             </form>
           </div>
@@ -74,28 +74,26 @@
         <table class="table table-bordered">
           <thead>
           <tr>
-            <th>Mã mặt bằng</th>
-            <th>Diện Tích</th>
-            <th>Trạng Thái</th>
-            <th>Tầng</th>
-            <th>Loại Văn Phòng</th>
-            <th>Giá cho thuê</th>
-            <th>Ngày Bắt Đầu</th>
-            <th>Ngày Kết Thúc</th>
-            <th>Edit & Delete</th>
+            <th>Mã mượn sách</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Tên học sinh</th>
+            <th>Lớp</th>
+            <th>Ngày mượn</th>
+            <th>Ngày trả</th>
+            <th>Trả sách</th>
           </tr>
           </thead>
           <tbody>
-          <c:forEach var="matbang" items="${matBangList}">
+          <c:forEach var="brCard" items="${borrowingCardList}">
             <tr>
-              <td>${matbang.maMatBang}</td>
-              <td>${matbang.dienTich}</td>
-              <td>${matbang.maTrangThai.tenTrangThai}</td>
-              <td>${matbang.tang}</td>
-              <td>${matbang.maLoaiVanPhong.tenLoaiVanPhong}</td>
-              <td>${matbang.giaChoThue}</td>
-              <td>${matbang.ngayBatDau}</td>
-              <td>${matbang.ngayKetThuc}</td>
+              <td>${brCard.id}</td>
+              <td>${brCard.book.name}</td>
+              <td>${brCard.book.author}</td>
+              <td>${brCard.student.name}</td>
+              <td>${brCard.student.studentClass}</td>
+              <td>${brCard.borrowingDate}</td>
+              <td>${brCard.repayingDate}</td>
               <td class="text-center">
                 <a href="/matbang?note=edit&maMatBang=${matbang.getMaMatBang()}"
                    role="button" class="btn btn-large btn-warning">Edit</a>
